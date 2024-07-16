@@ -1,0 +1,16 @@
+{
+  "name": "graphql-mesh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "mesh build",
+    "pretest": "npm run build",
+    "start": "mesh dev"
+  },
+  "dependencies": {
+    "@graphql-mesh/cli": "^0.92.0",
+    "@graphql-mesh/graphql": "^0.99.0",
+    "graphql": "^16.9.0"
+  }
+}

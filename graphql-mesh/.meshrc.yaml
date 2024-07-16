@@ -1,0 +1,9 @@
+sources:
+  - name: Products
+    handler:
+      graphql:
+        endpoint: '{env.PRODUCTS_ENDPOINT}'
+  - name: Users
+    handler:
+      graphql:
+        endpoint: '{env.USERS_ENDPOINT}'
