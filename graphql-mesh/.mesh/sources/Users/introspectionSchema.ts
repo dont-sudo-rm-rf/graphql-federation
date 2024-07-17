@@ -25,78 +25,7 @@ const schemaAST = {
       "kind": "ObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "Query"
-      },
-      "fields": [
-        {
-          "kind": "FieldDefinition",
-          "name": {
-            "kind": "Name",
-            "value": "products"
-          },
-          "arguments": [],
-          "type": {
-            "kind": "NonNullType",
-            "type": {
-              "kind": "ListType",
-              "type": {
-                "kind": "NonNullType",
-                "type": {
-                  "kind": "NamedType",
-                  "name": {
-                    "kind": "Name",
-                    "value": "Product"
-                  }
-                }
-              }
-            }
-          },
-          "directives": []
-        },
-        {
-          "kind": "FieldDefinition",
-          "name": {
-            "kind": "Name",
-            "value": "product"
-          },
-          "arguments": [
-            {
-              "kind": "InputValueDefinition",
-              "name": {
-                "kind": "Name",
-                "value": "id"
-              },
-              "type": {
-                "kind": "NonNullType",
-                "type": {
-                  "kind": "NamedType",
-                  "name": {
-                    "kind": "Name",
-                    "value": "ID"
-                  }
-                }
-              },
-              "directives": []
-            }
-          ],
-          "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "Product"
-            }
-          },
-          "directives": []
-        }
-      ],
-      "interfaces": [],
-      "directives": []
-    },
-    {
-      "kind": "ObjectTypeDefinition",
-      "name": {
-        "kind": "Name",
-        "value": "Product"
+        "value": "User"
       },
       "fields": [
         {
@@ -141,7 +70,7 @@ const schemaAST = {
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "description"
+            "value": "email"
           },
           "arguments": [],
           "type": {
@@ -155,21 +84,38 @@ const schemaAST = {
             }
           },
           "directives": []
-        },
+        }
+      ],
+      "interfaces": [],
+      "directives": []
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "name": {
+        "kind": "Name",
+        "value": "Query"
+      },
+      "fields": [
         {
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "price"
+            "value": "users"
           },
           "arguments": [],
           "type": {
             "kind": "NonNullType",
             "type": {
-              "kind": "NamedType",
-              "name": {
-                "kind": "Name",
-                "value": "Float"
+              "kind": "ListType",
+              "type": {
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "User"
+                  }
+                }
               }
             }
           },

@@ -2,14 +2,12 @@ schema {
   query: Query
 }
 
-type Query {
-  products: [Product!]!
-  product(id: ID!): Product
-}
-
-type Product {
+type User {
   id: ID!
   name: String!
-  description: String!
-  price: Float!
+  email: String!
+}
+
+type Query {
+  users: [User!]!
 }

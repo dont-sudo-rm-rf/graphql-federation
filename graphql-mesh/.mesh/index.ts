@@ -31,6 +31,7 @@ export type Scalars = {
 export type Query = {
   products: Array<Product>;
   product?: Maybe<Product>;
+  users: Array<User>;
 };
 
 
@@ -43,6 +44,12 @@ export type Product = {
   name: Scalars['String']['output'];
   description: Scalars['String']['output'];
   price: Scalars['Float']['output'];
+};
+
+export type User = {
+  id: Scalars['ID']['output'];
+  name: Scalars['String']['output'];
+  email: Scalars['String']['output'];
 };
 
 export type WithIndex<TObject> = TObject & Record<string, any>;
@@ -137,6 +144,7 @@ export type ResolversTypes = ResolversObject<{
   Float: ResolverTypeWrapper<Scalars['Float']['output']>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
+  User: ResolverTypeWrapper<User>;
 }>;
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -147,11 +155,13 @@ export type ResolversParentTypes = ResolversObject<{
   Float: Scalars['Float']['output'];
   ID: Scalars['ID']['output'];
   Boolean: Scalars['Boolean']['output'];
+  User: User;
 }>;
 
 export type QueryResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
   products?: Resolver<Array<ResolversTypes['Product']>, ParentType, ContextType>;
   product?: Resolver<Maybe<ResolversTypes['Product']>, ParentType, ContextType, RequireFields<QueryproductArgs, 'id'>>;
+  users?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
 }>;
 
 export type ProductResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Product'] = ResolversParentTypes['Product']> = ResolversObject<{
@@ -162,9 +172,17 @@ export type ProductResolvers<ContextType = MeshContext, ParentType extends Resol
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
+export type UserResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = ResolversObject<{
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
 export type Resolvers<ContextType = MeshContext> = ResolversObject<{
   Query?: QueryResolvers<ContextType>;
   Product?: ProductResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
 }>;
 
 

@@ -20,28 +20,19 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
-export type Query = {
-  products: Array<Product>;
-  product?: Maybe<Product>;
-};
-
-
-export type QueryproductArgs = {
-  id: Scalars['ID']['input'];
-};
-
-export type Product = {
+export type User = {
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  price: Scalars['Float']['output'];
+  email: Scalars['String']['output'];
+};
+
+export type Query = {
+  users: Array<User>;
 };
 
   export type QuerySdk = {
       /** null **/
-  products: InContextSdkMethod<Query['products'], {}, MeshContext>,
-  /** null **/
-  product: InContextSdkMethod<Query['product'], QueryproductArgs, MeshContext>
+  users: InContextSdkMethod<Query['users'], {}, MeshContext>
   };
 
   export type MutationSdk = {
