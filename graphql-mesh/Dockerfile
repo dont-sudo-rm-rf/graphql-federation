@@ -1,5 +1,5 @@
 FROM node
 COPY . .
-USER 10001
 RUN yarn install 
+USER 10001
 CMD yarn start
